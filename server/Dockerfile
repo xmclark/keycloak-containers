@@ -25,7 +25,9 @@ RUN /opt/jboss/tools/build-keycloak.sh
 USER 1000
 
 EXPOSE 8080
-EXPOSE 8443
+
+# Intentionally not exposing this port to help Render correctly forward 8080 for HTTP
+#EXPOSE 8443
 
 ENTRYPOINT [ "/opt/jboss/tools/docker-entrypoint.sh" ]
 
